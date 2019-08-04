@@ -1,0 +1,9 @@
+.link{
+    color: grey;
+    font-size: 18px;
+    transition: all 500ms;
+}
+.active{
+    color: red;
+    font-size: 25px;
+}
