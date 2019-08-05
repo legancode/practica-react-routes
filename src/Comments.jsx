@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CommentsList from './CommentsList'
 
 class Comments extends Component {
     constructor(props) {
@@ -28,17 +29,7 @@ class Comments extends Component {
             <div>
                 <button onClick={this.handleReq}>Conseguir comentarios</button>
                 <div>
-                    {   // Comprobamos si se muestra o no "cargando..." en base al req que esta en el state.
-                        req ? <div>Cargando...</div> : null
-                    }
-                    {   // Esta segunda comprobacion es para estar seguros de que no este "cargando..."
-                        // y a la vez, exista contenido en comments para mostrarlo en la interfaz.
-                        !req && comments.length
-                            ? <ul>
-                                {comments.map(c => (<div key={c.id}>{c.email}</div>))}
-                            </ul>
-                            : null
-                    }
+                    <CommentsList comments={comments} req={req} />
                 </div>
             </div>
         )

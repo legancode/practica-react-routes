@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PostsList from './PostsList';
 
 class Posts extends Component {
     constructor(props) {
@@ -8,6 +9,8 @@ class Posts extends Component {
             posts: [],
             req: false,
         }
+
+        this.req = this.state.req
     }
 
     handleReq = async () => {
@@ -25,16 +28,7 @@ class Posts extends Component {
             <div>
                 <button onClick={this.handleReq}>Conseguir posts</button>
                 <div>
-                    {
-                        req ? <div>Cargando...</div> : null
-                    }
-                    {
-                        !req && posts.length
-                            ? <ul>
-                                {posts.map(p => (<div key={p.id}>{p.title}</div>))}
-                            </ul>
-                            : null
-                    }
+                    <PostsList req={req} posts={posts} />
                 </div>
             </div>
         )
