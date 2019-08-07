@@ -8,6 +8,8 @@ import Pages from './Pages';
 import Comments from './Comments'
 import Menu from './Menu';
 import Posts from './Posts';
+import MyHook from './MyHook';
+import ChangeNumber from './ChangeNumber';
 const App = () => (
   <Router>
     {/* Todo lo que este fuera de switch, es lo que no cambiara en la interfaz */}
@@ -23,6 +25,8 @@ const App = () => (
       <Route path='/posts' component={Posts} />
       <Route path='/comentarios' component={Comments} />
       <Route path='/contacto' component={Contact} />
+      <Route path='/myhook' component={MyHook} />
+      <Route path='/changenumber' component={ChangeNumber} />
       {/* Una ruta que devuelve un callback que retorna un componente */}
       <Route path="/uncomponente" component={() => (<div>Soy un componente creado en un callback</div>)} />
       <Route component={() => (<div>ERROR 404</div>)} />
